@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Doctor</title>
+    <link rel="icon" type="image/x-icon" href="../resources/logo.ico">
+    <link rel="stylesheet" href="../add/add.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img class="logo" src="../resources/logo.png">
+        <h1 class="title">VitalPoint</h1>
+    </div>
+
+    <!-- Form -->
+    <form action="" style="border:1px solid #ccc">
+        <div class="container">
+            <h1>Add Doctor</h1>
+            <p>Please fill in this form to add a doctor's details.</p>
+            <hr>
+
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Full Name" name="name" required>
+
+            <label for="specialty"><b>Specialty</b></label>
+            <select name="specialty" required>
+                <option value="" disabled selected>Select Specialty</option>
+                <option value="General Practitioner">General Practitioner</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Orthopedic">Orthopedic</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="schedule"><b>Schedule</b></label>
+            <div class="schedule">
+                <select name="days[]" id="days" multiple required>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+                <div class="time-inputs">
+                    <label for="start-time"><b>Start Time</b></label>
+                    <input type="time" name="start_time" id="start-time" required>
+            
+                    <label for="end-time"><b>End Time</b></label>
+                    <input type="time" name="end_time" id="end-time" required>
+                </div>
+            </div>
+            
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <div class="clearfix">
+                <a href="../edit/edit.html">
+                <button type="button" class="cancelbtn">Cancel</button>
+                </a>
+                <button type="submit" class="submitbtn" id="submitbtn">Submit</button>
+            </div>
+        </div>
+    </form>
+    <!-- Modal Popup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Are you sure?</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure the information you inputted is correct?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="../add_confirmed/confirmed.html">
+                <button id="confirmBtn" class="confirm-btn">Confirm</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="../add/add.js"></script>
+</body>
+</html>

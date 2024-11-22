@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/*header*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px;
+    background-color: #4F8DDE;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 1.8em;
+    flex-grow: 1; /* Pushes the title to take available space */
+    text-align: left;
+    margin: 0 20px;
+    white-space: nowrap;
+}
+
+.loginbtn {
+    padding: 1px 5px;
+    background-color: #4F8DDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 50px;
+    margin-left: auto;
+}
+.loginbtn_active {
+    padding: 1px 5px;
+    background-color: #4F8DDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 50px;
+    margin-left: auto;
+    font-weight: bold;
+}
+.loginbtn:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Table patients */
+.container {
+    width: 80%;
+    margin: 160px auto 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.directory-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 90px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}

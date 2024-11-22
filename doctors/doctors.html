@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Point</title>
+    <link rel="icon" type="image/x-icon" href="../resources/logo.ico">
+    <link rel="stylesheet" href="../doctors/doctors.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img class="logo" src="../resources/logo.png">
+        <h1 class="title">VitalPoint</h1>
+        <a href="../index.html">
+        <button class="loginbtn">HOME</button>
+        </a>
+    </div>
+
+    <!-- Table of doctors -->
+    <div class="container">
+        <h1 class="directory-title">Doctor's Directory</h1>
+
+        <!-- Filter and Search Section -->
+        <div class="filter-search-container">
+            <div class="filter">
+                <label for="specialty-select">Select Specialty</label>
+                <select id="specialty-select">
+                    <option value="all">All Specialties</option>
+                    <option value="Cardiologist">Cardiologist</option>
+                    <option value="Pediatrician">Pediatrician</option>
+                    <option value="Dermatologist">Dermatologist</option>
+                    <!-- dagdag kung may kulang pa -->
+                </select>
+            </div>
+            <div class="search">
+                <label for="doctor-search">Search by Doctor's Name</label>
+                <input type="text" id="doctor-search" placeholder="Enter doctor's name">
+            </div>
+        </div>
+
+        <!-- Doctors Table -->
+        <table id="doctor-table">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>SPECIALTY</th>
+                    <th>CLINIC HOURS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="handleRowClick('Dr. Emma Smith', 'Cardiologist', 'Mon-Fri, 9 AM - 5 PM', this.dataset.gender)" 
+                    data-gender="Female">
+                    <td>Dr. Emma Smith</td>
+                    <td>Cardiologist</td>
+                    <td>Mon-Fri, 9 AM - 5 PM</td>
+                </tr>
+                <tr onclick="handleRowClick('Dr. Liam Johnson', 'Pediatrician', 'Tue-Thu, 10 AM - 4 PM', this.dataset.gender)" 
+                    data-gender="Male">
+                    <td>Dr. Liam Johnson</td>
+                    <td>Pediatrician</td>
+                    <td>Tue-Thu, 10 AM - 4 PM</td>
+                </tr>
+                <tr onclick="handleRowClick('Dr. Sophia Davis', 'Dermatologist', 'Mon-Wed, 11 AM - 3 PM', this.dataset.gender)" 
+                    data-gender="Female">
+                    <td>Dr. Sophia Davis</td>
+                    <td>Dermatologist</td>
+                    <td>Mon-Wed, 11 AM - 3 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© LCJ Innovations 2024</p>
+    </div>
+
+    <script src="../doctors/doctors.js"></script>
+</body>
+</html>

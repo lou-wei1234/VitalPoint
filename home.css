@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    position: relative;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px; /* Added consistent padding */
+    background-color: #4F8DDE;
+    color: white;
+    position: fixed; /* Fixes the header at the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px; /* Adds some space between logo and title */
+}
+
+.title {
+    font-size: 1.8em;
+    flex-grow: 1; /* Pushes the title to take available space */
+    text-align: left;
+    margin: 0 20px; /* Adds spacing around the title */
+    white-space: nowrap; /* Prevents title from wrapping */
+    color: white;
+}
+
+.loginbtn {
+    padding: 1px 5px;
+    background-color: #4F8DDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 50px; /* Remove margin from the right */
+    margin-left: auto;
+}
+
+.loginbtn:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Doctor Image */
+.image {
+    position: fixed;
+    top: 53%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.doc {
+    width: 655px;
+    height: auto;
+    border-radius: 300px 0px 0px 300px;
+}
+
+/* Information */
+.information {
+    position: absolute;
+    top: 40%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+}
+
+.information .title2 {
+    font-size: 55px;
+    text-align: center;
+    position: absolute;
+}
+
+.information .desc {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    left: -50px;
+}
+
+.information .inq {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    color: #fff;
+    background-color: #4F8DDE;
+    height: 48px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+.inq:hover {
+    transform: scale(1.04);
+    background-color: blue;
+}
+
+/* Footer */
+.footer {
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    padding: 0px;
+    font-size: 16px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5em;
+        margin: 0 10px;
+    }
+
+    .loginbtn {
+        font-size: 0.9em;
+        padding: 8px 35px;
+    }
+
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .image {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .doc {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 120px 0px 120px 0px;
+    }
+
+    .information .title2 {
+        font-size: 37px !important;
+        left: 50%;
+        transform: translateX(-50%); /* Centers the title2 */
+    }
+
+    .information .desc {
+        font-size: 15px;
+        left: 50%;
+        transform: translateX(-50%); /* Centers the description */
+    }
+
+    .loginbtn, .inq {
+        margin-left: 120px;
+    }
+}

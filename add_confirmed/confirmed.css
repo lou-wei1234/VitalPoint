@@ -1,0 +1,101 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px; /* Added consistent padding */
+    background-color: #4F8DDE;
+    color: white;
+    position: fixed; /* Fixes the header at the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px; /* Adds some space between logo and title */
+}
+
+.title {
+    font-size: 1.8em;
+    flex-grow: 1; /* Pushes the title to take available space */
+    text-align: left;
+    margin: 0 20px; /* Adds spacing around the title */
+    white-space: nowrap; /* Prevents title from wrapping */
+    color: white;
+}
+
+.loginbtn {
+    padding: 1px 5px;
+    background-color: #4F8DDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 50px; /* Remove margin from the right */
+    margin-left: auto;
+}
+.loginbtn_active {
+    padding: 1px 5px;
+    background-color: #4F8DDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 50px; /* Remove margin from the right */
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.loginbtn:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* container */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: lightgray;
+    text-align: center;
+    border-radius: 20px;
+}
+button{
+    cursor: pointer;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+button:hover {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}

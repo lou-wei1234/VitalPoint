@@ -1,0 +1,140 @@
+/* General styles for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px;
+    background-color: #4F8DDE;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px; /* Adds some space between logo and title */
+}
+
+.title {
+    font-size: 1.8em;
+    flex-grow: 1; /* Pushes the title to take available space */
+    text-align: left;
+    margin: 0 20px;
+    white-space: nowrap; /* Prevents title from wrapping */
+    color: white;
+}
+
+.loginbtn {
+    padding: 1px 5px;
+    background-color: #4F8DDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 50px; /* Remove margin from the right */
+    margin-left: auto;
+}
+
+.loginbtn:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Table of doctors container */
+.container {
+    width: 80%;
+    margin: 120px auto 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.directory-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container for Filter and Search */
+.filter-search-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* Styling for the search input */
+.search, .filter {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+}
+
+.search label, .filter label {
+    font-size: 16px;
+    color: #333;
+}
+
+.search input, .filter select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 250px;
+    cursor: pointer;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+.footer {
+    background-color: lightgray; /* Dark background color */
+    color: black;           /* White text color */
+    text-align: center;     /* Center the text */
+    padding: 10px;          /* Padding around the content */
+    font-size: 16px;        /* Font size for the text */
+    position: fixed;        /* Fixes the footer to the bottom of the page */
+    width: 100%;            /* Full width of the page */
+    bottom: 0;              /* Keeps footer at the bottom of the page */
+    left: 0;                /* Aligns footer to the left edge */
+    z-index: 1000;          /* Ensures footer stays on top of other elements */
+}

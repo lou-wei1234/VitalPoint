@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT</title>
+    <link rel="icon" type="image/x-icon" href="../resources/logo.ico">
+    <link rel="stylesheet" href="../edit/edit.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img class="logo" src="../resources/logo.png">
+        <h1 class="title">VitalPoint</h1>
+        <a href="../appointments/appointments.html">
+            <button class="loginbtn">RECORDS</button>
+        </a>
+        <button class="loginbtn_active">EDIT</button>
+    </div>
+
+    <div class="container">
+        <!-- Table header -->
+        <div class="table_header">
+            <div>
+                <h1>Doctor List</h1>
+            </div>
+            <div>
+                <a href="../add/add.html">
+                    <button class="edit">ADD</button>
+                </a>
+                <button id="submitbtn" class="edit">DELETE</button>
+            </div>
+        </div>
+
+        <!-- Doctor List -->
+        <table id="doctor-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DOCTOR</th>
+                    <th>SPECIALTY</th>
+                    <th>SCHEDULE</th>
+                    <th>EMAIL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>143</td>
+                    <td>Luwi Otanes</td>
+                    <td>Cardiologist</td>
+                    <td>Mon - Thurs, 12pm - 3pm</td>
+                    <td>LuwiSigma_doctor@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>144</td>
+                    <td>John Doe</td>
+                    <td>Neurologist</td>
+                    <td>Mon - Fri, 10am - 2pm</td>
+                    <td>johndoe_doctor@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Remove Doctor</h2>
+            </div>
+            <div class="modal-body">
+                <input type="number" id="doctorID" placeholder="Input ID number to delete">
+            </div>
+            <div class="modal-footer">
+                <button id="confirmBtn" class="confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../edit/edit.js"></script>
+</body>
+</html>
