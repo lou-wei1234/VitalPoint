@@ -1,8 +1,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 100vh;
+    height: 100%;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -10,34 +11,34 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 20px; /* Added consistent padding */
+    padding: 10px 20px;
     background-color: #4F8DDE;
     color: white;
-    position: fixed; /* Fixes the header at the top of the page */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    width: 55px;
-    height: 55px;
-    margin-right: 10px; /* Adds some space between logo and title */
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .title {
-    font-size: 1.8em;
-    flex-grow: 1; /* Pushes the title to take available space */
+    font-size: 1.5em;
+    flex-grow: 1;
     text-align: left;
-    margin: 0 20px; /* Adds spacing around the title */
-    white-space: nowrap; /* Prevents title from wrapping */
+    margin: 0 10px;
+    white-space: nowrap;
     color: white;
 }
 
 .loginbtn {
-    padding: 1px 5px;
+    padding: 8px 50px;
     background-color: #4F8DDE;
     color: white;
     border: none;
@@ -45,80 +46,71 @@ body {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 50px; /* Remove margin from the right */
     margin-left: auto;
 }
 
 .loginbtn:hover {
-    text-decoration: underline;
-    font-weight: bold;
+    background-color: #3C74C3;
+}
+
+/* Container for Doctor Image and Information */
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    gap: 20px;
+    padding-top:130px;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Doctor Image */
 .image {
-    position: fixed;
-    top: 53%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 1000;
+    text-align: center;
 }
 
 .doc {
-    width: 655px;
+    width: 100%;
+    max-width: 500px;
     height: auto;
-    border-radius: 300px 0px 0px 300px;
+    border-radius: 200px 0 0 200px;
 }
 
 /* Information */
 .information {
-    position: absolute;
-    top: 40%;
-    left: 29%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 200px;
+    flex: 1 1 50%; /* Takes 50% width or adjusts for smaller screens */
+    text-align: center;
+    padding: 0 20px;
 }
 
 .information .title2 {
-    font-size: 55px;
-    text-align: center;
-    position: absolute;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 .information .desc {
-    position: relative;
-    text-align: center;
-    top: 50%;
-    left: -50px;
+    font-size: 1.1em;
+    margin: 0 auto;
+    line-height: 1.6;
+    width: 90%;
 }
 
 .information .inq {
-    display: inline-block;
-    outline: none;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1;
-    border-radius: 500px;
-    transition: background-color 0.3s ease;
-    border: 1px solid transparent;
-    letter-spacing: 2px;
-    min-width: 160px;
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1em;
     text-transform: uppercase;
-    white-space: normal;
-    font-weight: 700;
-    text-align: center;
-    padding: 17px 48px;
-    color: #fff;
     background-color: #4F8DDE;
-    height: 48px;
-    position: relative;
-    top: 100px;
-    left: 100px;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .inq:hover {
-    transform: scale(1.04);
-    background-color: blue;
+    transform: scale(1.05);
+    background-color: #3C74C3;
 }
 
 /* Footer */
@@ -126,59 +118,87 @@ body {
     background-color: lightgray;
     color: black;
     text-align: center;
-    padding: 0px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
     position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
-    z-index: 1000;
 }
 
-/* Responsive adjustments */
+/* Small Screens */
 @media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack logo and login button */
+        align-items: center;
+    }
+
     .title {
-        font-size: 1.5em;
-        margin: 0 10px;
+        font-size: 1.2em;
     }
 
     .loginbtn {
-        font-size: 0.9em;
-        padding: 8px 35px;
+        margin: 10px 0;
     }
 
-    .logo {
-        width: 45px;
-        height: 45px;
-    }
-
-    .image {
-        position: absolute;
-        top: 150px;
-        left: 50%;
-        transform: translateX(-50%);
+    .container {
+        flex-direction: column; /* Stack image and info vertically */
+        padding-top: 120px;
     }
 
     .doc {
-        width: 100%;
-        max-width: 200px;
-        height: auto;
-        border-radius: 120px 0px 120px 0px;
+        max-width: 300px;
+        border-radius: 25px;
     }
 
     .information .title2 {
-        font-size: 37px !important;
-        left: 50%;
-        transform: translateX(-50%); /* Centers the title2 */
+        font-size: 2em;
     }
 
     .information .desc {
-        font-size: 15px;
-        left: 50%;
-        transform: translateX(-50%); /* Centers the description */
+        font-size: 1em;
+        width: 100%;
     }
 
-    .loginbtn, .inq {
-        margin-left: 120px;
+    .inq {
+        width: auto;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .title {
+        font-size: 1em;
+    }
+
+    .loginbtn {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    .doc {
+        max-width: 200px;
+    }
+
+    .information .title2 {
+        font-size: 1.5em;
+    }
+
+    .information .desc {
+        font-size: 0.9em;
+    }
+
+    .inq {
+        font-size: 0.9em;
+        padding: 6px 15px;
     }
 }
