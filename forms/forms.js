@@ -81,6 +81,29 @@ function displayDetails() {
     }
 }
 
+//Transfer text
+function storeData() {
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const date = document.getElementById('date').value;
+    const appt = document.getElementById('appt').value;
+
+    // Store all values in localStorage
+    localStorage.setItem('nameData', name);
+    localStorage.setItem('addressData', address);
+    localStorage.setItem('emailData', email);
+    localStorage.setItem('ageData', age);
+    localStorage.setItem('genderData', gender);
+    localStorage.setItem('dateData', date);
+    localStorage.setItem('apptData', appt);
+
+    // Optionally, redirect to another page
+    window.location.href = 'destination.html';
+}
+
 
 var modal = document.getElementById("myModal");
 
