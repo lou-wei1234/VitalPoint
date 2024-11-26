@@ -8,6 +8,10 @@ body {
     background-position: center 30%;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow-y: hidden;
+    display: flex;               /* Use Flexbox for vertical alignment */
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */
 }
 
 /*header*/
@@ -15,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 20px;
+    padding: 10px 20px;
     background-color: #4F8DDE;
     color: white;
     position: fixed;
@@ -27,13 +31,13 @@ body {
 }
 
 .logo {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 }
 
 .title {
-    font-size: 1.8em;
+    font-size: 1.6em;
     flex-grow: 1; /* Pushes the title to take available space */
     text-align: left;
     margin: 0 20px;
@@ -42,7 +46,7 @@ body {
 }
 
 .loginbtn {
-    padding: 1px 5px;
+    padding: 8px 16px;
     background-color: #4F8DDE;
     color: white;
     border: none;
@@ -50,8 +54,6 @@ body {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 50px;
-    margin-left: auto;
 }
 
 .loginbtn:hover {
@@ -64,24 +66,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 0px;
-    padding: 20px;
-    margin-top: 0px;
+    padding: 10px;
+    margin-top: 10px;
     min-height: 400px;
     flex-wrap: wrap;
     position: relative;
-    top: 75px;
+    height: auto;
+    width: 100%;
+    max-width: 1200px;
 }
 
 /* Info Section */
 .info {
     background-color: #4F8DDE;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px 0px 0px 12px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     max-width: 350px;
     text-align: center;
-    flex: 1 1 350px; /* Flexible width for responsiveness */
+    flex: 1 1 350px;
     min-height: 410px;
     max-height: 410px;
     overflow-y: auto;
@@ -89,7 +92,7 @@ body {
 
 /* Form Section */
 .text {
-    padding: 25px;
+    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 0px 12px 12px 0px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
@@ -109,7 +112,7 @@ body {
 
 /* Form Title */
 .text h1 {
-    font-size: 24px;
+    font-size: 22px;
     color: #333;
     margin-bottom: 20px;
 }
@@ -117,15 +120,15 @@ body {
 /* Form Fields */
 .text p {
     margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .text input, .text select {
     width: 95%;
-    padding: 12px;
+    padding: 10px;
     margin-top: 8px;
     margin-bottom: 18px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 8px;
 }
@@ -134,8 +137,8 @@ body {
 .text button {
     background-color: #4F8DDE;
     color: white;
-    padding: 15px;
-    font-size: 18px;
+    padding: 12px;
+    font-size: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -148,61 +151,41 @@ body {
 
 /*footer*/
 .footer {
-    background-color: lightgray; /* Dark background color */
-    color: black;           /* White text color */
-    text-align: center;     /* Center the text */
-    padding: 0px;          /* Padding around the content */
-    font-size: 16px;        /* Font size for the text */
-    position: fixed;        /* Fixes the footer to the bottom of the page */
-    width: 100%;            /* Full width of the page */
-    bottom: 0;              /* Keeps footer at the bottom of the page */
-    left: 0;                /* Aligns footer to the left edge */
-    z-index: 1000;          /* Ensures footer stays on top of other elements */
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-
-
-
-/* Modal (background) */
+/* Modal */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black with transparency */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content */
-/* Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black with transparency */
-}
-
-/* Modal Content */
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto;
     padding: 10px;
     border: 1px solid #888;
-    width: 400px; /* Fixed width */
-    border-radius: 10px; /* Rounded corners */
+    width: 350px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header (Title Bar) */
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -217,7 +200,6 @@ body {
     margin: 0;
 }
 
-/* The Close Button */
 .close {
     color: white;
     font-size: 28px;
@@ -231,17 +213,14 @@ body {
     text-decoration: none;
 }
 
-/* Body */
 .modal-body {
     margin: 20px 0;
 }
 
-/* Footer */
 .modal-footer {
     text-align: right;
 }
 
-/* Confirm Button */
 .confirm-btn {
     background-color: #4CAF50;
     color: white;
@@ -253,4 +232,73 @@ body {
 
 .confirm-btn:hover {
     background-color: #45a049;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+        margin-top: 100px;
+    }
+
+    .info {
+        max-width: 320px;
+        padding: 12px;
+    }
+
+    .text {
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 1.6em;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .loginbtn {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+}
+
+/* For Extra Small Screens (below 768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .info, .text {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .text h1 {
+        font-size: 20px;
+    }
+
+    .text input, .text select {
+        font-size: 14px;
+    }
+
+    .text button {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
