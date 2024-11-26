@@ -1,5 +1,4 @@
 window.onload = function() {
-    // Retrieve data from localStorage
     const name = localStorage.getItem('nameData');
     const address = localStorage.getItem('addressData');
     const email = localStorage.getItem('emailData');
@@ -31,3 +30,5 @@ window.onload = function() {
         document.getElementById('patient-appt').textContent = appt;
     }
 }
+
+//Doctor Image
