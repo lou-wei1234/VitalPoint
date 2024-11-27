@@ -7,12 +7,12 @@ body{
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-/*header*/
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 20px;
+    padding: 10px 20px;
     background-color: #4F8DDE;
     color: white;
     position: fixed;
@@ -24,22 +24,22 @@ body{
 }
 
 .logo {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 }
 
 .title {
-    font-size: 1.8em;
+    font-size: 1.5em;
     flex-grow: 1;
     text-align: left;
-    margin: 0 20px; /* Adds spacing around the title */
+    margin: 0 10px;
     white-space: nowrap;
     color: white;
 }
 
 .loginbtn {
-    padding: 1px 5px;
+    padding: 8px 50px;
     background-color: #4F8DDE;
     color: white;
     border: none;
@@ -47,7 +47,6 @@ body{
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 50px; /* Remove margin from the right */
     margin-left: auto;
 }
 
@@ -62,7 +61,7 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute; /* Ensures the container is centered relative to the screen */
-    top: 52%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     flex-wrap: nowrap;
@@ -144,21 +143,16 @@ body{
     background-color: #3b74b1;
 }
 
-
-
-
-
-
 /*footer*/
 .footer {
-    background-color: lightgray; /* Dark background color */
-    color: black;           /* White text color */
-    text-align: center;     /* Center the text */
-    padding: 0px;          /* Padding around the content */
-    font-size: 16px;        /* Font size for the text */
-    position: fixed;        /* Fixes the footer to the bottom of the page */
-    width: 100%;            /* Full width of the page */
-    bottom: 0;              /* Keeps footer at the bottom of the page */
-    left: 0;                /* Aligns footer to the left edge */
-    z-index: 1000;          /* Ensures footer stays on top of other elements */
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 }

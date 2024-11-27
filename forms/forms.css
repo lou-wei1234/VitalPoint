@@ -14,7 +14,7 @@ body {
     align-items: center;         /* Center vertically */
 }
 
-/*header*/
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -37,16 +37,16 @@ body {
 }
 
 .title {
-    font-size: 1.6em;
-    flex-grow: 1; /* Pushes the title to take available space */
+    font-size: 1.5em;
+    flex-grow: 1;
     text-align: left;
-    margin: 0 20px;
+    margin: 0 10px;
     white-space: nowrap;
     color: white;
 }
 
 .loginbtn {
-    padding: 8px 16px;
+    padding: 8px 50px;
     background-color: #4F8DDE;
     color: white;
     border: none;
@@ -54,6 +54,7 @@ body {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left: auto;
 }
 
 .loginbtn:hover {

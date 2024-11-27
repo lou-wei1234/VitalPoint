@@ -6,12 +6,12 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header styles */
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 20px;
+    padding: 10px 20px;
     background-color: #4F8DDE;
     color: white;
     position: fixed;
@@ -23,22 +23,22 @@ body {
 }
 
 .logo {
-    width: 55px;
-    height: 55px;
-    margin-right: 10px; /* Adds some space between logo and title */
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .title {
-    font-size: 1.8em;
-    flex-grow: 1; /* Pushes the title to take available space */
+    font-size: 1.5em;
+    flex-grow: 1;
     text-align: left;
-    margin: 0 20px;
-    white-space: nowrap; /* Prevents title from wrapping */
+    margin: 0 10px;
+    white-space: nowrap;
     color: white;
 }
 
 .loginbtn {
-    padding: 1px 5px;
+    padding: 8px 50px;
     background-color: #4F8DDE;
     color: white;
     border: none;
@@ -46,7 +46,6 @@ body {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 50px; /* Remove margin from the right */
     margin-left: auto;
 }
 
@@ -125,16 +124,16 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Footer */
+/*footer*/
 .footer {
-    background-color: lightgray; /* Dark background color */
-    color: black;           /* White text color */
-    text-align: center;     /* Center the text */
-    padding: 10px;          /* Padding around the content */
-    font-size: 16px;        /* Font size for the text */
-    position: fixed;        /* Fixes the footer to the bottom of the page */
-    width: 100%;            /* Full width of the page */
-    bottom: 0;              /* Keeps footer at the bottom of the page */
-    left: 0;                /* Aligns footer to the left edge */
-    z-index: 1000;          /* Ensures footer stays on top of other elements */
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 }
