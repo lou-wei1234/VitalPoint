@@ -60,15 +60,16 @@ body{
 .container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 0px; 
-    padding: 20px;
-    margin-top: 0px;
-    min-height: 400px;
-    flex-wrap: wrap;
-    position: relative;
-    top: 75px;
+    align-items: center;
+    position: absolute; /* Ensures the container is centered relative to the screen */
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-wrap: nowrap;
+    max-width: 900px;
+    width: 100%;
 }
+
 
 /* Info Section */
 .info {
@@ -76,9 +77,9 @@ body{
     padding: 20px;
     border-radius: 12px 0px 0px 12px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    max-width: 350px;
+    max-width: 45%;
     text-align: center;
-    flex: 1 1 350px; /* Flexible width for responsiveness */
+    flex: 1;
     min-height: 410px;
     max-height: 410px;
     overflow-y: auto;
@@ -90,9 +91,9 @@ body{
     border: 1px solid #ddd;
     border-radius: 0px 12px 12px 0px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    max-width: 400px;
+    max-width: 45%;
     text-align: left;
-    flex: 1 1 400px; /* Flexible width for responsiveness */
+    flex: 1;
     min-height: 400px;
     height: auto;
     max-height: 400px;
