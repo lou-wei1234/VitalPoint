@@ -1,7 +1,7 @@
 function handleRowClick(name, specialty, hours, gender) {
     console.log("Redirecting with:", name, specialty, hours, gender);
 
-    // Doctors
+    // Define doctor's available days and time slots based on the doctor's name
     let allowedDays, startHour, endHour;
 
     if (name === "Dr. Emma Smith") {
@@ -18,13 +18,22 @@ function handleRowClick(name, specialty, hours, gender) {
         endHour = 15;
     }
 
-    // Serialize allowed days as a comma-separated string
-    const daysParam = allowedDays.join(',');
+    // Store doctor data in localStorage as an object
+    const doctorData = {
+        name,
+        specialty,
+        hours,
+        gender,
+        allowedDays,
+        startHour,
+        endHour
+    };
+    localStorage.setItem('doctorData', JSON.stringify(doctorData));
 
-    // Construct the URL with all parameters
-    const url = `../forms/forms.html?name=${encodeURIComponent(name)}&specialty=${encodeURIComponent(specialty)}&hours=${encodeURIComponent(hours)}&gender=${encodeURIComponent(gender)}&days=${encodeURIComponent(daysParam)}&start=${startHour}&end=${endHour}`;
-    window.location.href = url;
+    // Redirect to the forms.html page
+    window.location.href = '../forms/forms.html';
 }
+
 
 //ilter and search elements
 const specialtySelect = document.getElementById('specialty-select');

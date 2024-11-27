@@ -1,40 +1,30 @@
 function displayDetails() {
     console.log("Current URL:", window.location.href);
 
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name');
-    const specialty = params.get('specialty');
-    const hours = params.get('hours');
-    const gender = params.get('gender');
-    const allowedDays = params.get('days') ? params.get('days').split(',') : [];
-    const startHour = parseInt(params.get('start'), 10);
-    const endHour = parseInt(params.get('end'), 10);
+    // Retrieve doctor data from localStorage
+    const doctorData = JSON.parse(localStorage.getItem('doctorData'));
+    if (doctorData) {
+        console.log("Doctor Data:", doctorData);
 
-    console.log("Extracted Parameters:", { name, specialty, hours, gender, allowedDays, startHour, endHour });
+        document.getElementById('doctor-name').textContent = doctorData.name;
+        document.getElementById('doctor-specialty').textContent = doctorData.specialty;
+        document.getElementById('clinic-hours').textContent = doctorData.hours;
 
-    if (name && specialty && hours) {
-        // Update doctor details
-        document.getElementById('doctor-name').textContent = name;
-        document.getElementById('doctor-specialty').textContent = specialty;
-        document.getElementById('clinic-hours').textContent = hours;
-
-        // Doctor gender
         const doctorImage = document.getElementById('doctor-image');
-        if (gender.toLowerCase() === "male") {
+        if (doctorData.gender.toLowerCase() === "male") {
             doctorImage.src = "../resources/male.jpg";
             doctorImage.alt = "Male Doctor";
-        } else if (gender.toLowerCase() === "female") {
+        } else if (doctorData.gender.toLowerCase() === "female") {
             doctorImage.src = "../resources/female.png";
             doctorImage.alt = "Female Doctor";
         }
 
-        // Enable date input and set min to today's date
         const dateInput = document.getElementById('date');
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today); // Disable past dates
         dateInput.disabled = false;
 
-        // Generate time slots
+        // Generate time slots based on doctor’s available hours
         const timeInput = document.getElementById('appt');
         const generateTimeSlots = (start, end) => {
             const times = [];
@@ -44,7 +34,7 @@ function displayDetails() {
             return times;
         };
 
-        const timeSlots = generateTimeSlots(startHour, endHour);
+        const timeSlots = generateTimeSlots(doctorData.startHour, doctorData.endHour);
 
         // Populate time dropdown
         timeSlots.forEach((time) => {
@@ -59,8 +49,8 @@ function displayDetails() {
             const selectedDate = new Date(this.value);
             const day = selectedDate.toLocaleString('en-US', { weekday: 'short' });
 
-            if (!allowedDays.includes(day)) {
-                alert(`The doctor is only available on: ${allowedDays.join(', ')}`);
+            if (!doctorData.allowedDays.includes(day)) {
+                alert(`The doctor is only available on: ${doctorData.allowedDays.join(', ')}`);
                 this.value = '';
                 timeInput.disabled = true;
             } else {
@@ -77,9 +67,10 @@ function displayDetails() {
             }
         });
     } else {
-        console.error("Missing parameters or incorrect URL structure.");
+        console.error("No doctor data found in localStorage.");
     }
 }
+
 
 var modal = document.getElementById("myModal");
 
@@ -125,3 +116,26 @@ function storeData() {
 
     window.location.href = '../confirmation/confirmation.html';
 }
+
+function storeData() {
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const date = document.getElementById('date').value;
+    const appt = document.getElementById('appt').value;
+
+    // Store patient data in localStorage
+    localStorage.setItem('nameData', name);
+    localStorage.setItem('addressData', address);
+    localStorage.setItem('emailData', email);
+    localStorage.setItem('ageData', age);
+    localStorage.setItem('genderData', gender);
+    localStorage.setItem('dateData', date);
+    localStorage.setItem('apptData', appt);
+
+    // Redirect to confirmation.html page
+    window.location.href = '../confirmation/confirmation.html';
+}
+

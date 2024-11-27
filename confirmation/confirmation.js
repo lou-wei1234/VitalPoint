@@ -7,7 +7,7 @@ window.onload = function() {
     const date = localStorage.getItem('dateData');
     const appt = localStorage.getItem('apptData');
 
-    // Check if the data exists and set it in the respective elements
+    // Display patient data
     if (name) {
         document.getElementById('patient-name').textContent = name;
     }
@@ -29,6 +29,23 @@ window.onload = function() {
     if (appt) {
         document.getElementById('patient-appt').textContent = appt;
     }
-}
 
-//Doctor Image
+    // Display doctor data
+    const doctorData = JSON.parse(localStorage.getItem('doctorData'));
+    if (doctorData) {
+        document.getElementById('doctor-name').textContent = doctorData.name;
+        document.getElementById('doctor-specialty').textContent = doctorData.specialty;
+        document.getElementById('clinic-hours').textContent = doctorData.hours;
+
+        const doctorImage = document.getElementById('doctor-image');
+        if (doctorData.gender.toLowerCase() === "male") {
+            doctorImage.src = "../resources/male.jpg";
+            doctorImage.alt = "Male Doctor";
+        } else if (doctorData.gender.toLowerCase() === "female") {
+            doctorImage.src = "../resources/female.png";
+            doctorImage.alt = "Female Doctor";
+        }
+
+        
+    }
+};
