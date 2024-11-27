@@ -15,61 +15,55 @@
     </div>
 
     <!-- Form -->
-    <form action="" style="border:1px solid #ccc">
+    <form id="addDoctorForm" style="border:1px solid #ccc">
         <div class="container">
             <h1>Add Doctor</h1>
             <p>Please fill in this form to add a doctor's details.</p>
             <hr>
-
+    
             <label for="name"><b>Name</b></label>
             <input type="text" placeholder="Enter Full Name" name="name" required>
-
+    
             <label for="specialty"><b>Specialty</b></label>
             <select name="specialty" required>
                 <option value="" disabled selected>Select Specialty</option>
                 <option value="General Practitioner">General Practitioner</option>
                 <option value="Cardiologist">Cardiologist</option>
-                <option value="Dermatologist">Dermatologist</option>
-                <option value="Neurologist">Neurologist</option>
-                <option value="Orthopedic">Orthopedic</option>
-                <!-- Add more options as needed -->
+                <option value="Pediatrician">Pediatrician</option>
             </select>
-
-            <label for="schedule"><b>Schedule</b></label>
-            <div class="schedule">
-                <select name="days[]" id="days" multiple required>
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
-                    <option value="Sunday">Sunday</option>
-                </select>
-                <div class="time-inputs">
-                    <label for="start-time"><b>Start Time</b></label>
-                    <input type="time" name="start_time" id="start-time" required>
-            
-                    <label for="end-time"><b>End Time</b></label>
-                    <input type="time" name="end_time" id="end-time" required>
-                </div>
-            </div>
-            
-
+    
+            <label for="days"><b>Days Available</b></label>
+            <select name="days[]" id="days" multiple required>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+    
+            <label for="start-time"><b>Start Time</b></label>
+            <input type="time" name="start_time" required>
+    
+            <label for="end-time"><b>End Time</b></label>
+            <input type="time" name="end_time" required>
+    
             <label for="email"><b>Email</b></label>
             <input type="email" placeholder="Enter Email" name="email" required>
-
+    
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" required>
-
+    
             <div class="clearfix">
                 <a href="../edit/edit.html">
                 <button type="button" class="cancelbtn">Cancel</button>
                 </a>
-                <button type="submit" class="submitbtn" id="submitbtn">Submit</button>
+                <button type="submit" class="submitbtn" id="submit">Submit</button>
             </div>
         </div>
     </form>
+    
     <!-- Modal Popup -->
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -81,12 +75,12 @@
                 <p>Are you sure the information you inputted is correct?</p>
             </div>
             <div class="modal-footer">
-                <a href="../add_confirmed/confirmed.html">
                 <button id="confirmBtn" class="confirm-btn">Confirm</button>
-                </a>
             </div>
         </div>
     </div>
+
+    <!-- Add JS at the bottom -->
     <script src="../add/add.js"></script>
 </body>
 </html>

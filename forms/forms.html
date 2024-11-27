@@ -16,9 +16,10 @@
             <button class="loginbtn">HOME</button>
         </a>
     </div>
-    
+
+    <!-- Form Container -->
     <div class="container">
-        <!-- Card -->
+        <!-- Card displaying doctor details -->
         <div class="info">
             <h1>Doctor Details</h1>
             <img class="doctor" id="doctor-image" src="" alt="Doctor Image" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 10px;">
@@ -27,48 +28,48 @@
             <p><strong>Clinic Hours:</strong> <span id="clinic-hours"></span></p>
         </div>
 
-        <!-- Information Form -->
+        <!-- Appointment Information Form -->
         <div class="text">
             <h1>INFORMATION</h1>
             <form id="appointment-form">
-                <p><strong>Name:</strong> <input class="input" type="text" id="name"></p>
-                <p><strong>Address:</strong> <input class="input" type="text" id="address"></p>
-                <p><strong>Email:</strong> <input class="input" type="email" id="email"></p>
-                <p><strong>Age:</strong> <input class="input" type="number" class="age" id="age"></p>
+                <p><strong>Name:</strong> <input class="input" type="text" id="name" required></p>
+                <p><strong>Address:</strong> <input class="input" type="text" id="address" required></p>
+                <p><strong>Email:</strong> <input class="input" type="email" id="email" required></p>
+                <p><strong>Age:</strong> <input class="input" type="number" id="age" required></p>
                 <p><strong>Gender:</strong>
-                    <select name="sex" id="gender">
+                    <select name="sex" id="gender" required>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                 </p>
-                <p><strong>Date:</strong> <input type="date" id="date" disabled></p>
+                <p><strong>Date:</strong> <input type="date" id="date" disabled required></p>
                 <p><strong>Select Time:</strong>
-                    <select name="Select" id="appt" disabled>
+                    <select name="Select" id="appt" disabled required>
                         <option value="">Select a time</option>
                     </select>
                 </p>
-                <button id="submit" type="button" onclick="storeData()">Submit</button>
+                <button type="submit" id="submit">Submit</button>
             </form>
         </div>
     </div>
 
-<!-- Modal Popup -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Are you sure?</h2>
-        </div>
-        <div class="modal-body">
-            <p>Do you want to schedule this appointment?</p>
-        </div>
-        <div class="modal-footer">
-            <a href="../confirmation/confirmation.html">
-            <button id="confirmBtn" class="confirm-btn" onclick="storeData()">Confirm</button>
-            </a>
+    <!-- Modal Popup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Are you sure?</h2>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to schedule this appointment?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="../confirmation/confirmation.html">
+                <button id="confirmBtn" class="confirm-btn" onclick="storeData()">Confirm</button>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
     <!-- Footer -->
     <div class="footer">

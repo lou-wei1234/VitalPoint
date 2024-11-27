@@ -1,7 +1,7 @@
+// Function to display doctor details
 function displayDetails() {
     console.log("Current URL:", window.location.href);
 
-    // Retrieve doctor data from localStorage
     const doctorData = JSON.parse(localStorage.getItem('doctorData'));
     if (doctorData) {
         console.log("Doctor Data:", doctorData);
@@ -57,45 +57,47 @@ function displayDetails() {
                 timeInput.disabled = false;
             }
         });
-
-        // Validate time input
-        timeInput.addEventListener('change', function () {
-            const selectedTime = this.value;
-            if (!timeSlots.includes(selectedTime)) {
-                alert(`Please select a valid time slot.`);
-                this.value = '';
-            }
-        });
     } else {
         console.error("No doctor data found in localStorage.");
     }
 }
 
-
+// Modal references
 var modal = document.getElementById("myModal");
-
 var btn = document.getElementById("submit");
-
 var span = document.getElementsByClassName("close")[0];
 
-// clicked "submit"
-btn.onclick = function() {
-    modal.style.display = "block"; 
-}
+// When the submit button is clicked
+btn.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent form submission
 
-// x button
+    // Check if all fields have values
+    if (validateForm()) {
+        modal.style.display = "block"; // Show the modal if all inputs are valid
+    } else {
+        alert("Please fill in all the fields.");
+    }
+});
+
+// When the "X" button is clicked to close the modal
 span.onclick = function() {
     modal.style.display = "none";
+};
+
+// make sure all input has data
+function validateForm() {
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const date = document.getElementById('date').value;
+    const appt = document.getElementById('appt').value;
+
+    // Ensure all fields are filled
+    return name && address && email && age && gender && date && appt;
 }
 
-//close
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-//Transfer text
 function storeData() {
     const name = document.getElementById('name').value;
     const address = document.getElementById('address').value;
@@ -113,29 +115,5 @@ function storeData() {
     localStorage.setItem('dateData', date);
     localStorage.setItem('apptData', appt);
 
-
     window.location.href = '../confirmation/confirmation.html';
 }
-
-function storeData() {
-    const name = document.getElementById('name').value;
-    const address = document.getElementById('address').value;
-    const email = document.getElementById('email').value;
-    const age = document.getElementById('age').value;
-    const gender = document.getElementById('gender').value;
-    const date = document.getElementById('date').value;
-    const appt = document.getElementById('appt').value;
-
-    // Store patient data in localStorage
-    localStorage.setItem('nameData', name);
-    localStorage.setItem('addressData', address);
-    localStorage.setItem('emailData', email);
-    localStorage.setItem('ageData', age);
-    localStorage.setItem('genderData', gender);
-    localStorage.setItem('dateData', date);
-    localStorage.setItem('apptData', appt);
-
-    // Redirect to confirmation.html page
-    window.location.href = '../confirmation/confirmation.html';
-}
-
