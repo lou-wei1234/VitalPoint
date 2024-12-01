@@ -1,4 +1,3 @@
-// Function to display doctor details
 function displayDetails() {
     console.log("Current URL:", window.location.href);
 
@@ -69,7 +68,7 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the submit button is clicked
 btn.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
     // Check if all fields have values
     if (validateForm()) {
@@ -94,7 +93,11 @@ function validateForm() {
     const date = document.getElementById('date').value;
     const appt = document.getElementById('appt').value;
 
-    // Ensure all fields are filled
+    if (age < 1) {
+        alert("Age must be 1 or greater.");
+        return false;
+    }
+
     return name && address && email && age && gender && date && appt;
 }
 
