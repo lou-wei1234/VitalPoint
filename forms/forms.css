@@ -97,7 +97,6 @@ body {
 .text {
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 0px 12px 12px 0px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     max-width: 700px;
     text-align: left;
@@ -151,12 +150,11 @@ body {
     background-color: #3b74b1;
 }
 
-/*age gender*/
-/* Adjust the layout for age and gender group */
+/*age gender side side*/
 .age-gender-group {
-    display: flex; /* Use flexbox to align age and gender fields side by side */
-    justify-content: space-between; /* Space items evenly */
-    margin-bottom: 18px; /* Add space below the group */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px
 }
 
 .age-gender-group p {
