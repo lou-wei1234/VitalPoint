@@ -56,10 +56,10 @@ body {
 
 /* Table of doctors container */
 .container {
-    width: 80%;
+    width: 90%;
     margin: 120px auto 20px;
     background: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -68,34 +68,86 @@ body {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
+    font-size: 1.5em;
 }
 
 /* Container for Filter and Search */
 .filter-search-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
+    justify-content: center;
     align-items: center;
 }
 
-/* Styling for the search input */
 .search, .filter {
     display: flex;
-    flex-direction: column; /* Stack label and input vertically */
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+    text-align: center; /* Align label text to center */
+    flex: 1 1 100%;
+    max-width: 300px;
 }
 
-.search label, .filter label {
+.search label, 
+.filter label {
     font-size: 16px;
     color: #333;
+    margin-bottom: 5px;
 }
 
-.search input, .filter select {
-    padding: 10px;
+/* Styling for select dropdown */
+.filter select {
+    appearance: none;
+    background-color: #f4f4f4;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
     font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 250px;
+    color: #333;
     cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="gray" d="M0 0l5 6 5-6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 10px;
+}
+
+.filter select:hover, 
+.filter select:focus {
+    border-color: gray;
+    outline: none;
+    background-color: #e8f5e9;
+}
+
+/* Styling for search input */
+.search input {
+    background-color: #f4f4f4;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.search input:hover,
+.search input:focus {
+    border-color: gray;
+    outline: none;
+    background-color: #e8f5e9;
 }
 
 /* Table Styling */
@@ -103,17 +155,18 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    font-size: 0.9em;
 }
 
 table th, table td {
     border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+    padding: 8px;
 }
 
 table th {
-    background-color: #4CAF50;
+    background-color: #4F8DDE;
     color: white;
+    font-size: 1em;
 }
 
 table tr:nth-child(even) {
@@ -125,7 +178,7 @@ table tr:hover {
     cursor: pointer;
 }
 
-/*footer*/
+/* Footer */
 .footer {
     background-color: lightgray;
     color: black;
@@ -137,4 +190,66 @@ table tr:hover {
     bottom: 0;
     left: 0;
     z-index: 1000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .loginbtn {
+        padding: 8px 30px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .directory-title {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .title {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+
+    .loginbtn {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .filter-search-container {
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    table th, table td {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    .directory-title {
+        font-size: 1.2em;
+    }
 }
