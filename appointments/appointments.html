@@ -12,58 +12,64 @@
     <div class="header">
         <img class="logo" src="../resources/logo.png">
         <h1 class="title">VitalPoint</h1>
+        
+        <!-- Search Input -->
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search by Name" onkeyup="searchTable()">
+
         <a href="../login/admin.html">
-        <button class="loginbtn_active">RECORDS</button>
+            <button class="loginbtn_active">RECORDS</button>
         </a>
         <a href="../edit/edit.html">
-        <button class="loginbtn">EDIT</button>
+            <button class="loginbtn">EDIT</button>
         </a>
     </div>
 
     <!-- Patient Table -->
-    <table id="doctor-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>DOCTOR</th>
-                <th>CONTACT</th>
-                <th>EMAIL</th>
-                <th>DATE & TIME</th>
-                <th>ACTION</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>143</td>
-                <td>Eli Mary</td>
-                <td>Edward Musk</td>
-                <td>09662223411</td>
-                <td>Elimarie@gmail.com</td>
-                <td>Mon, 9 AM</td>
-                <td class="no-hover"><button class="delete-btn">Delete</button></td>
-            </tr>
-            <tr>
-                <td>143</td>
-                <td>Eli Mary</td>
-                <td>Edward Musk</td>
-                <td>09662223411</td>
-                <td>Elimarie@gmail.com</td>
-                <td>Mon, 9 AM</td>
-                <td class="no-hover"><button class="delete-btn">Delete</button></td>
-            </tr>
-            <tr>
-                <td>143</td>
-                <td>Eli Mary</td>
-                <td>Edward Musk</td>
-                <td>09662223411</td>
-                <td>Elimarie@gmail.com</td>
-                <td>Mon, 9 AM</td>
-                <td class="no-hover"><button class="delete-btn">Delete</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-    
+    <div class="container">
+        <table id="doctor-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>DOCTOR</th>
+                    <th>CONTACT</th>
+                    <th>EMAIL</th>
+                    <th>DATE & TIME</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>143</td>
+                    <td>Eli Mary</td>
+                    <td>Edward Musk</td>
+                    <td>09662223411</td>
+                    <td>Elimarie@gmail.com</td>
+                    <td>Mon, 9 AM</td>
+                    <td class="no-hover"><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>144</td>
+                    <td>John Doe</td>
+                    <td>Sarah Smith</td>
+                    <td>09662345678</td>
+                    <td>johndoe@gmail.com</td>
+                    <td>Mon, 10 AM</td>
+                    <td class="no-hover"><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>145</td>
+                    <td>Jane Doe</td>
+                    <td>Edward Musk</td>
+                    <td>09662456789</td>
+                    <td>janedoe@gmail.com</td>
+                    <td>Tue, 11 AM</td>
+                    <td class="no-hover"><button class="delete-btn">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../appointments/appointments.js"></script>
 </body>
 </html>
