@@ -1,3 +1,4 @@
+/* Global body styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -9,9 +10,10 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     overflow-y: hidden;
-    display: flex;               /* Use Flexbox for vertical alignment */
-    justify-content: center;     /* Center horizontally */
-    align-items: center;         /* Center vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Header */
@@ -68,7 +70,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 10px; /* Adjust to avoid overlap with fixed header */
     min-height: 400px;
     flex-wrap: wrap;
     position: relative;
@@ -104,7 +106,6 @@ body {
     height: auto;
     max-height: 400px;
     overflow-y: auto;
-    overflow-x: hidden;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -150,7 +151,7 @@ body {
     background-color: #3b74b1;
 }
 
-/*footer*/
+/* Footer */
 .footer {
     background-color: lightgray;
     color: black;
@@ -283,6 +284,10 @@ body {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
+        padding: 15px;
+        margin-top: 100px;
+        overflow-y: auto; /* Enable scrolling */
+        height: 100vh; /* Allow container to fill screen height */
     }
 
     .info, .text {
@@ -301,5 +306,10 @@ body {
     .text button {
         font-size: 14px;
         padding: 10px;
+    }
+
+    /* add bottom space */
+    .container {
+        padding-bottom: 60px
     }
 }
