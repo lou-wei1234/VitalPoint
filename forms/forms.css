@@ -99,7 +99,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 0px 12px 12px 0px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    max-width: 400px;
+    max-width: 700px;
     text-align: left;
     flex: 1 1 400px;
     min-height: 400px;
@@ -149,6 +149,31 @@ body {
 
 .text button:hover {
     background-color: #3b74b1;
+}
+
+/*age gender*/
+/* Adjust the layout for age and gender group */
+.age-gender-group {
+    display: flex; /* Use flexbox to align age and gender fields side by side */
+    justify-content: space-between; /* Space items evenly */
+    margin-bottom: 18px; /* Add space below the group */
+}
+
+.age-gender-group p {
+    flex: 1; /* Allow both age and gender fields to take equal space */
+    margin-right: 10px; /* Add some space between age and gender */
+}
+
+.age-gender-group p:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+.text select,
+.text input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
 /* Footer */

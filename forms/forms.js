@@ -93,7 +93,8 @@ function validateForm() {
     const date = document.getElementById('date').value;
     const appt = document.getElementById('appt').value;
 
-    if (age < 1) {
+    // Only check the age if it's not empty
+    if (age && age < 1) {
         alert("Age must be 1 or greater.");
         return false;
     }
