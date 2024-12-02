@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 /* Header styles */
@@ -11,33 +12,33 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 20px; /* Added consistent padding */
+    padding: 13px 20px;
     background-color: #4F8DDE;
     color: white;
-    position: fixed; /* Fixes the header at the top of the page */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
 .logo {
     width: 55px;
     height: 55px;
-    margin-right: 10px; /* Adds some space between logo and title */
+    margin-right: 10px;
 }
 
 .title {
     font-size: 1.8em;
-    flex-grow: 1; /* Pushes the title to take available space */
+    flex-grow: 1;
     text-align: left;
-    margin: 0 20px; /* Adds spacing around the title */
-    white-space: nowrap; /* Prevents title from wrapping */
-    color: white;
+    margin: 0 20px;
+    white-space: nowrap;
 }
 
-.loginbtn {
+.loginbtn, .loginbtn_active {
     padding: 1px 5px;
     background-color: #4F8DDE;
     color: white;
@@ -46,20 +47,11 @@ body {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 50px; /* Remove margin from the right */
+    margin-right: 50px;
     margin-left: auto;
 }
+
 .loginbtn_active {
-    padding: 1px 5px;
-    background-color: #4F8DDE;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 50px; /* Remove margin from the right */
-    margin-left: auto;
     font-weight: bold;
 }
 
@@ -67,35 +59,85 @@ body {
     text-decoration: underline;
     font-weight: bold;
 }
-/* container */
+/* Container styles */
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: lightgray;
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-radius: 20px;
 }
-button{
+
+.success-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Button styles */
+.btn {
     cursor: pointer;
-    outline: 0;
-    display: inline-block;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: 6px 12px;
     font-size: 1rem;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    color: #0d6efd;
-    border-color: #0d6efd;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
 }
-button:hover {
-    color: #fff;
+
+.btn.primary {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #028a56;
+}
+
+.btn.secondary {
     background-color: #0d6efd;
-    border-color: #0d6efd;
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #084dbf;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .title {
+        margin: 10px 0;
+    }
+
+    .header-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container {
+        width: 90%;
+        padding: 30px 15px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+    }
 }

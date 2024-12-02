@@ -11,80 +11,65 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 20px; /* Added consistent padding */
+    padding: 13px 20px;
     background-color: #4F8DDE;
     color: white;
-    position: fixed; /* Fixes the header at the top of the page */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     width: 55px;
     height: 55px;
-    margin-right: 10px; /* Adds some space between logo and title */
+    margin-right: 10px;
 }
 
 .title {
     font-size: 1.8em;
-    flex-grow: 1; /* Pushes the title to take available space */
+    flex-grow: 1;
     text-align: left;
-    margin: 0 20px; /* Adds spacing around the title */
-    white-space: nowrap; /* Prevents title from wrapping */
+    margin: 0 20px;
+    white-space: nowrap;
     color: white;
-}
-
-.loginbtn {
-    padding: 1px 5px;
-    background-color: #4F8DDE;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 50px; /* Remove margin from the right */
-    margin-left: auto;
-}
-.loginbtn_active {
-    padding: 1px 5px;
-    background-color: #4F8DDE;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 50px; /* Remove margin from the right */
-    margin-left: auto;
-    font-weight: bold;
-}
-
-.loginbtn:hover {
-    text-decoration: underline;
-    font-weight: bold;
 }
 
 /* Form styling */
 .container {
     margin: 100px auto;
-    width: 60%;
+    width: 50%;
     padding: 16px 16px 70px 16px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
+.container h1, .container p {
+    text-align: center;
+}
+
+/* Label styling */
+.container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input and select styling */
 input[type=text], input[type=password], input[type=email], select, input[type=time] {
-    width: 95%;
+    display: block;
+    width: 100%;
+    max-width: 100%; /* Ensure inputs never exceed the container width */
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
     border-radius: 5px;
+    box-sizing: border-box; /* Include padding and borders in the width */
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, select:focus, input[type=time]:focus {
@@ -92,6 +77,22 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, sel
     outline: none;
 }
 
+/* Schedule section */
+.schedule {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.schedule select, 
+.time-inputs input[type="time"] {
+    flex: 1;
+    min-width: 180px;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Button styling */
 button {
     background-color: #04AA6D;
     color: white;
@@ -99,7 +100,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 48%;
     opacity: 0.9;
 }
 
@@ -111,99 +112,40 @@ button:hover {
     background-color: #f44336;
 }
 
-.cancelbtn, .signupbtn {
+.cancelbtn, .submitbtn {
     float: left;
-    width: 50%;
+    width: 48%;
+    margin: 0 1%;
 }
 
-/* Schedule styles */
-.schedule {
-    display: flex;
-    gap: 10px;
-}
-
-.schedule select {
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #f1f1f1;
-    margin-bottom: 15px;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
 }
 
-.schedule select:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-.time-inputs {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.time-inputs input[type="time"] {
-    width: calc(50% - 5px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #f1f1f1;
-}
-
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .cancelbtn, .signupbtn {
-        width: 100%;
-    }
-}
-
-/* modal */
-/* Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black with transparency */
-}
-
-/* Modal Content */
-/* Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black with transparency */
-}
-
-/* Modal Content */
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 10px;
     border: 1px solid #888;
-    width: 400px; /* Fixed width */
-    border-radius: 10px; /* Rounded corners */
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header (Title Bar) */
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -218,7 +160,6 @@ button:hover {
     margin: 0;
 }
 
-/* The Close Button */
 .close {
     color: white;
     font-size: 28px;
@@ -226,23 +167,19 @@ button:hover {
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #ddd;
     text-decoration: none;
 }
 
-/* Body */
 .modal-body {
     margin: 20px 0;
 }
 
-/* Footer */
 .modal-footer {
     text-align: right;
 }
 
-/* Confirm Button */
 .confirm-btn {
     background-color: #4CAF50;
     color: white;
@@ -254,4 +191,20 @@ button:hover {
 
 .confirm-btn:hover {
     background-color: #45a049;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .schedule {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
 }

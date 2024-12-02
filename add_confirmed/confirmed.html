@@ -8,26 +8,31 @@
     <link rel="stylesheet" href="../add_confirmed/confirmed.css">
 </head>
 <body>
-     <!-- Header -->
+    <!-- Header -->
     <div class="header">
-        <img class="logo" src="../resources/logo.png">
+        <img class="logo" src="../resources/logo.png" alt="Logo">
         <h1 class="title">VitalPoint</h1>
+        <div class="header-buttons">
             <a href="../appointments/appointments.html">
-            <button class="loginbtn">RECORDS</button>
+                <button class="loginbtn">Records</button>
             </a>
-            <button class="loginbtn_active">EDIT</button>
-    </div>
-    <div class="container">
-        <h1>Doctor Succesfully Added!</h1>
-        <div>
-        <a href="../appointments/appointments.html">
-        <button>RECORDS</button>
-        </a>
-        <a href="../edit/edit.html">
-        <button>EDIT</button>
-        </a>
+            <button class="loginbtn_active">Edit</button>
         </div>
     </div>
-    <script src="../add_confirmed/confirmed.html"></script>   
+
+    <!-- Confirmation Container -->
+    <div class="container">
+        <h1 class="success-message">Doctor Successfully Added!</h1>
+        <div class="action-buttons">
+            <a href="../appointments/appointments.html">
+                <button class="btn primary">View Records</button>
+            </a>
+            <a href="../edit/edit.html">
+                <button class="btn secondary">View Doctors</button>
+            </a>
+        </div>
+    </div>
+
+    <script src="../add_confirmed/confirmed.js"></script>   
 </body>
 </html>
