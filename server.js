@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const path = require('path');
+const connectDB = require('./config/db');
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use(express.json()); // Parse incoming JSON
 
 // Serve static files (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
+
+connectDB();
 
 // Routes
 app.use('/', require('./routes/index'));     // General routes

@@ -1,19 +1,16 @@
-const mysql = require('mysql2');
+const mongoose = require('mongoose');
 
-// Create the connection to the database
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-});
+// MongoDB connection string
+const DB_URI = 'mongodb://localhost:27017/clinic_db';
 
-db.connect((err) => {
-    if (err) {
-        console.error('Database connection error:', err.stack);
-        return;
-    }
-    console.log('Connected to the database');
-});
+// Connect to the database
+const connectDB = async () => {
+  try {
+    await mongoose.connect(DB_URI);
+    console.log('Connected to MongoDB');
+  } catch (err) {
+    console.error('Error connecting to MongoDB:', err.message);
+  }
+};
 
-module.exports = db; // Allow access to other parts of the app (e.g controllers)
+module.exports = connectDB;

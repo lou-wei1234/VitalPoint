@@ -17,11 +17,11 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
 
         const data = await response.json();
-        //console.log(data)
+        console.log(data)
         if (response.ok) {
             // Save the token to localStorage
             localStorage.setItem('token', data.token);
-
+            console.log(data.role)
             // Redirect to the appropriate dashboard
             if (data.role === 'admin') {
                 window.location.href = '/admin/home';

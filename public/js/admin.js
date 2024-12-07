@@ -9,17 +9,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error('Failed to fetch user data');
         }
 
-        const users = await response.json();
-        console.log('Users:', users);
+        const data = await response.json();
+        console.log(data)
+        const users = data.users;
 
         // Get the table body element
         const tableBody = document.querySelector('#userTable tbody');
+        tableBody.innerHTML = ''; // Clear any existing content
 
         // Populate the table with user data
         users.forEach(user => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${user.id}</td>
+                <td>${user._id}</td>
                 <td>${user.email}</td>
                 <td>${user.role}</td>
             `;
